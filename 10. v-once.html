@@ -1,30 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Vue V-onClick</title>
+    <title>Vue v-once</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   </head>
 
   <body>
-    <h2>v-onClick and v-model Directive</h2>
-    <p>
-      v-onClick directive used to add some functionality to a button or a click
-      listener.
-    </p>
-    <p>v-model binds the data of any input field to a variable.</p>
-
-    <h2>v-bind Directive</h2>
-    <p>
-      v-bind can take an html attribute like 'disabled' which work in vanila
-      html and parse it as javascript.
-    </p>
-
+    <h1>v-once:</h1>
+    <p>v-once directive used to show static html element.</p>
     <div id="root">
       Sign UP
       <label>Enter your name</label>
-      <input placeholder="Enter your email" type="text" v-model="email" />
+      <input
+        placeholder="Enter your email"
+        type="text"
+        v-model="email"
+        v-bind:class="{red: email.length < 10}"
+      />
+      <p v-once>{{email}}</p>
       <p>{{email}}</p>
-
       <button
         onclick="alert('Submit button clicked.')"
         v-bind:disabled="email.length < 10"
@@ -37,7 +31,7 @@
       var vue_app = new Vue({
         el: "#root",
         data: {
-          email: "",
+          email: "jitubhai@gmail.com",
         },
       });
     </script>
