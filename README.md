@@ -10,3 +10,8 @@ Currently it have some vue directives examples which are as followes: -
 2. v-if, v-else-if, v-else
 3. v-show
 4. v-onClick
+5. v-bind
+6. v-text
+7. v-html
+8. v-once
+9. v-for
