@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue Data Binding</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="root" style="text-align: center">
+      <p>Vue data binding by "v-model".</p>
+      <p>Directive are used to interact with the DOM.</p>
+      <input
+        type="text"
+        v-model="greeting"
+        style="
+          border-width: 1px;
+          border-radius: 5px;
+          border-style: groove;
+          height: 40;
+          width: 70;
+          color: red;
+        "
+      />
+
+      <p>{{greeting}}</p>
+    </div>
+
+    <script type="text/javascript">
+      var vue_app = new Vue({
+        el: "#root",
+        data: {
+          greeting: "Hello vue",
+        },
+      });
+    </script>
+  </body>
+</html>

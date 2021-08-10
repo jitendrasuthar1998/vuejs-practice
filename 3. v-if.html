@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue V-IF</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <h2>V-if Directive</h2>
+    <p>
+      v-if directive used to render a particular dom when certain condition is
+      true or false.
+    </p>
+    <div id="root">
+      <div style="color: red" v-if="count===1">
+        <p>Here count is equat to 1, that why this div has been rendered.</p>
+      </div>
+
+      <div style="color: green" v-else-if="count===2">
+        <p>here count is equal to 2, that why this div has been rendered.</p>
+      </div>
+
+      <div style="color: rgb(170, 78, 93)" v-else>
+        <p>
+          This text is in dark pink color because count is not equal to anyone.
+        </p>
+        <p></p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var vue_app = new Vue({
+        el: "#root",
+        data: {
+          count: 4,
+        },
+      });
+    </script>
+  </body>
+</html>
