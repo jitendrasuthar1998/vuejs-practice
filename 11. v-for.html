@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Looping in Vue</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+  <h1>v-for:</h1>
+  <p>v-for directive used to loop on items of array or object.</p>
+  <div id="root">
+    <p>
+    <p>This cats list is comming from cat array.</p>
+    <ul>
+      <li v-for="cat of cats">{{cat}}</li>
+    </ul>
+    </p>
+    <p>
+    <h1>Best City of India</h1>
+    <p>This city names are coming from city array.</p>
+    <ol>
+      <li v-for="city of cities">{{city}}</li>
+    </ol>
+    </p>
+
+    <p>
+    <h1>Users :- </h1>
+    <p>This users' name is coming from users array of objects.</p>
+    </p>
+    <ol>
+      <li v-for="user of users">{{user.name}}</li>
+    </ol>
+
+  </div>
+
+  <script type="text/javascript">
+    var vue_app = new Vue({
+      el: "#root",
+      data: {
+        cats: [
+          'kitkat',
+          'fish',
+          'henry',
+          'bosco',
+          'melanthios'
+        ],
+        cities: [
+          'Jodhpur',
+          'Mumbai',
+          'Kota',
+          'Pune',
+          'Jaipur'
+        ],
+        users: [
+          { name: 'Jitu Bhai' },
+          { name: 'Vidit' },
+          { name: 'Rohit' },
+          { name: 'Lokesh' }
+        ]
+      },
+    });
+  </script>
+</body>
+
+</html>

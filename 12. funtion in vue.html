@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Functions in Vue</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+  <p>you can put '@' at the place of 'v-on:'</p>
+  <h1>v-for:</h1>
+  <p>v-for directive used to loop on items of array or object.</p>
+  <div id="root">
+    <input v-model="newUser" @keyup.enter="addUser">
+    <button v-on:click="addUser">
+      + Add
+    </button>
+    <p>
+    <h1>Users :- </h1>
+    <p>This users' name is coming from users array of objects.</p>
+    </p>
+    <ol>
+      <li v-for="user of users">{{user.name}}</li>
+    </ol>
+
+  </div>
+
+  <script type="text/javascript">
+    var vue_app = new Vue({
+      el: "#root",
+      data: {
+        users: [
+          { name: 'Jitu Bhai' },
+          { name: 'Vidit' },
+          { name: 'Rohit' },
+          { name: 'Lokesh' }
+        ],
+        newUser: ''
+      },
+      methods:{
+        addUser: function(){
+          //push user object in users array of object.
+          this.users.push({name:this.newUser});
+          //clear input field after adding user in users list.
+          this.newUser = '';
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
