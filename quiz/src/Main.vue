@@ -1,14 +1,18 @@
 <template>
-  <HelloWorld msg="Jitu bhai is learning VUE JS by creating VUE App" :myExperience="`I am learning vue and it's a nice experience for me.`"/>
+<div>
+  <Header/>
+  <Question-box/>
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Header from './components/Header.vue'
+import QuestionBox from './components/QuestionBox.vue'
 export default {
   name: 'Main',
   components: {
-    HelloWorld
+    Header,
+    QuestionBox
   },
 }
 </script>
@@ -24,7 +28,7 @@ export default {
   padding-top: 5px;
   padding-bottom: 5px;
   border-style: groove;
-  border-color: black;
+  border-color: pink;
   border-width: 5px;
   align-self: center;
   justify-content: center;
