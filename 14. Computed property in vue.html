@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Computed Property in Vue</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+  <h1>Computed Property in Vue</h1>
+  <h2>Computed property are the retruns of function in computed section of vue component.</h2>
+  <div id="root">
+    <input v-model="newUser" @keyup.enter="addUser">
+    <button>
+      + Add
+    </button>
+    <p>
+    <h1>Users :- </h1>
+    <p>This users' name is coming from users array of objects.</p>
+    </p>
+    <p>{{addUserName}}</p>
+
+    <ol>
+      <li v-for="user of users">{{user.name }}</li>
+    </ol>
+
+  </div>
+
+  <script type="text/javascript">
+    var vue_app = new Vue({
+      el: "#root",
+      data: {
+        users: [
+          { name: 'jitu bhai' },
+          { name: 'vidit' },
+          { name: 'rohit' },
+          { name: 'lokesh' }
+        ],
+        newUser: ''
+      },
+      methods: {
+        addUser: function ()
+        {
+          //push user object in users array of object.
+          this.users.push({ name: this.newUser });
+          //clear input field after adding user in users list.
+          this.newUser = '';
+        }
+      },
+      computed: {
+        addUserName: function ()
+        {
+          if (this.newUser.length > 2)
+          {
+            return this.newUser + 'y'
+          }
+        }
+      },
+    });
+  </script>
+</body>
+
+</html>
