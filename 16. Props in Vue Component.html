@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Props in Vue Component</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+  <h1>Props in Vue Component</h1>
+  <h2>Props are like parameter of function. By props, we can send any variable, function, object or array to the vue
+    component.</h2>
+  <div id="root">
+    <cat-list v-bind:cats="cats" />
+  </div>
+
+  <script type="text/javascript">
+
+    Vue.component('cat-list',{
+      props: ['cats'],
+      template:
+        `
+        <ul>
+          <li v-for="cat in cats">
+            {{cat}}</li>
+        </ul>
+        `
+    });
+
+    app = new Vue({
+      el: "#root",
+      component: [
+        'cat-list'
+      ],
+      data: {
+        cats: [
+          'kitkat',
+          'fish',
+          'henry'
+        ]
+      },
+
+    });
+  </script>
+</body>
+
+</html>
