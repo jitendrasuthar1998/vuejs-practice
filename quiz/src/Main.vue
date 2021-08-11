@@ -1,18 +1,14 @@
 <template>
-<div>
-  <p>Main Component</p>
-  <Main/>
-</div>
-  
-  </template>
+  <HelloWorld msg="Jitu bhai is learning VUE JS by creating VUE App" :myExperience="`I am learning vue and it's a nice experience for me.`"/>
+</template>
 
 <script>
-import Main from './Main.vue'
+import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'App',
+  name: 'Main',
   components: {
-    Main
+    HelloWorld
   },
 }
 </script>

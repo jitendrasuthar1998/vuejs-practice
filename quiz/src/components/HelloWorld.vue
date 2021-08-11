@@ -1,6 +1,8 @@
 <template>
-  <div class="hello">
+  <div class="hello" id="hello">
+<p>HelloWorld component</p>
     <img alt="Vue logo" src="../assets/logo.png">
+
     <h1>{{ msg }}</h1>
     
     <p>{{myExperience}}</p>
@@ -22,15 +24,12 @@ export default {
 h3 {
   margin: 40px 0 0;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+#hello {
+border-width: 5px;
+border-color: paleturquoise;
+border-style: dashed;
+margin: 100px;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>
